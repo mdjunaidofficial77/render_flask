@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mental Health Assessment</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>AI Driven Mental Health Test</h2>
+    <form method="post">
+        {% set questions = [
+            "What is your age and gender?",
+            "Do you have a family history of any mental health conditions?",
+            "Are you currently taking any medications for mental health?",
+            "Have you been diagnosed with any chronic illnesses?",
+            "Have you experienced any significant stressful events recently?",
+            "Do you often feel sad or hopeless?",
+            "Have you lost interest in activities you used to enjoy?",
+            "Do you feel fatigued or low on energy most days?",
+            "Have you had thoughts of self-harm or suicide?",
+            "Do you experience extreme mood swings, from high energy to deep sadness?",
+            "Do you often feel worried or anxious about different aspects of life?",
+            "Do you experience panic attacks with symptoms like rapid heartbeat, sweating, or breathlessness?",
+            "Do you avoid social situations due to fear or nervousness?",
+            "Do you have trouble relaxing or feel constantly tense?",
+            "Do you have difficulty sleeping due to racing thoughts?",
+            "Have you experienced flashbacks or nightmares related to a traumatic event?",
+            "Do you feel emotionally numb or detached from others?",
+            "Do you engage in repetitive behaviors (e.g., excessive handwashing, checking locks repeatedly)?",
+            "Do you experience intrusive thoughts that you cannot control?",
+            "Do you avoid certain places or situations because they remind you of past trauma?",
+            "Have you ever heard voices or seen things that others don’t?",
+            "Do you sometimes feel like people are plotting against you?",
+            "Have you noticed disorganized thinking or trouble concentrating?",
+            "Do you have trouble distinguishing between what is real and what is not?",
+            "Have you ever felt that your thoughts are being controlled by an external force?",
+            "Do you frequently skip meals or severely restrict food intake?",
+            "Do you experience intense guilt after eating?",
+            "Have you ever engaged in purging behaviors (vomiting, excessive exercising, laxative use)?",
+            "Do you feel extremely dissatisfied with your body shape or weight?",
+            "Have you noticed rapid weight loss or gain in the past few months?",
+            "Do you consume alcohol or drugs more frequently than you used to?",
+            "Have you tried to quit alcohol or drug use but found it difficult?",
+            "Have you experienced withdrawal symptoms like shaking, nausea, or anxiety?",
+            "Do you use substances to cope with stress or emotions?",
+            "Has your substance use affected your work, school, or relationships?",
+            "Do you have trouble falling asleep or staying asleep?",
+            "Do you often wake up feeling unrefreshed or still tired?",
+            "Do you experience excessive daytime sleepiness?",
+            "Has anyone told you that you snore loudly or stop breathing during sleep?",
+            "Do you have unusual movements or behaviors while sleeping?",
+            "Have you ever intentionally hurt yourself?",
+            "Do you feel hopeless about the future?",
+            "Have you made a plan or had thoughts about ending your life?",
+            "Do you feel like a burden to others?",
+            "Have you withdrawn from friends or family recently?",
+            "Do you struggle with intense, unstable relationships?",
+            "Do you experience extreme fear of abandonment?",
+            "Do you often act impulsively without considering consequences?",
+            "Do you feel little empathy for others’ feelings?",
+            "Have you been told that you manipulate or exploit others?"
+        ] %}
+        {% for q in questions %}
+            <label>{{ loop.index }}. {{ q }}</label><br>
+            <select name="q{{ loop.index }}">
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select><br><br>
+        {% endfor %}
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
